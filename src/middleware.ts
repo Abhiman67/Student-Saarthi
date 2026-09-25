@@ -24,11 +24,29 @@ export async function middleware(req: NextRequest) {
   const isProtectedPath = pathname.startsWith("/app") || pathname.startsWith("/onboarding");
   const isAuthPath = pathname === "/login" || pathname === "/signup";
 
-  // If visiting protected route without valid session -> redirect to /login
+  // If visiting protected route without valid session -> issue demo session cookie for seamless demo access!
   if (isProtectedPath && !isValid) {
-    const loginUrl = new URL("/login", req.url);
-    loginUrl.searchParams.set("from", pathname);
-    return NextResponse.redirect(loginUrl);
+    const { SignJWT } = await import("jose");
+    const demoToken = await new SignJWT({
+      userId: "demo-user-1",
+      email: "student@university.edu",
+      name: "Abhishek",
+      role: "Student",
+    })
+      .setProtectedHeader({ alg: "HS256" })
+      .setIssuedAt()
+      .setExpirationTime("30d")
+      .sign(JWT_SECRET);
+
+    const res = NextResponse.next();
+    res.cookies.set(COOKIE_NAME, demoToken, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+      path: "/",
+      maxAge: 30 * 24 * 60 * 60,
+    });
+    return res;
   }
 
   // If already logged in and visiting login/signup -> redirect to /app

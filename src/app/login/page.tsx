@@ -130,7 +130,7 @@ export default function LoginPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full flex justify-center items-center gap-2 rounded-xl bg-indigo-600 py-3 px-4 text-sm font-semibold text-white shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:scale-95 disabled:opacity-70 transition"
+                className="w-full flex justify-center items-center gap-2 rounded-xl bg-[#D97757] py-3 px-4 text-sm font-semibold text-white shadow-md hover:bg-[#C96442] focus:outline-none active:scale-95 disabled:opacity-70 transition"
               >
                 {loading ? (
                   <>
@@ -146,6 +146,26 @@ export default function LoginPage() {
               </button>
             </div>
           </form>
+
+          <div className="mt-6 pt-6 border-t border-[#E8E2D9] text-center">
+            <button
+              type="button"
+              onClick={() => {
+                try {
+                  const { LocalStore } = require("@/lib/storage");
+                  LocalStore.init();
+                } catch {}
+                router.push("/app");
+              }}
+              className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-emerald-500/40 bg-emerald-50/70 py-2.5 px-4 text-xs font-bold text-emerald-800 hover:bg-emerald-100 transition shadow-xs"
+            >
+              <Sparkles className="h-4 w-4 text-emerald-600" />
+              <span>⚡ Instant Demo Workspace (No Login Needed)</span>
+            </button>
+            <p className="mt-2 text-[11px] text-slate-400">
+              Pre-loaded with Writing Buddy, Project Guide, Code Mentor & sample capstones
+            </p>
+          </div>
         </div>
       </div>
     </div>
