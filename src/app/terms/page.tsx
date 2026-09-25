@@ -14,7 +14,7 @@ export default function TermsOfServicePage() {
             <h1 className="mt-2 text-3xl font-extrabold text-slate-900 sm:text-4xl">
               Terms of Service & Academic Policy
             </h1>
-            <p className="mt-2 text-sm text-slate-500">Effective: Academic Mid-Viva Semester 2026</p>
+            <p className="mt-2 text-sm text-slate-500">Effective: Academic Year 2026</p>
           </div>
 
           <div className="rounded-2xl border border-slate-200 bg-white p-8 sm:p-12 shadow-sm space-y-8 text-slate-700 leading-relaxed text-sm">
@@ -50,7 +50,7 @@ export default function TermsOfServicePage() {
                 <BookOpen className="h-5 w-5 text-indigo-600" /> 4. Non-Commercial Academic Scope
               </h2>
               <p className="mt-2">
-                This version represents a mid-viva evaluation build. Billing and subscriptions are intentionally disabled. You may use this software for evaluation, demonstration, and personal academic workflows.
+                This version represents an academic evaluation build. Billing and subscriptions are intentionally disabled. You may use this software for evaluation, demonstration, and personal academic workflows.
               </p>
             </section>
           </div>

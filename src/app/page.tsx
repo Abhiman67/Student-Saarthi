@@ -110,7 +110,7 @@ export default function LandingPage() {
     },
     {
       q: "Is there any cost for students in this version?",
-      a: "No. The mid-viva version is completely free for academic evaluation. Billing is intentionally disabled in this MVP.",
+      a: "No. Vidya Sarthi is completely free for university students. Billing is intentionally disabled in this evaluation release.",
     },
   ];
 
@@ -127,7 +127,7 @@ export default function LandingPage() {
             <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200/80 bg-indigo-50/80 px-3.5 py-1.5 text-xs font-semibold text-indigo-700 shadow-sm backdrop-blur-sm">
               <Sparkles className="h-3.5 w-3.5 text-indigo-600" />
               <span>Next-Gen Academic AI Workspace</span>
-              <span className="rounded bg-indigo-600/10 px-1.5 py-0.5 text-[10px] text-indigo-800">Mid-Viva MVP</span>
+              <span className="rounded bg-indigo-600/10 px-1.5 py-0.5 text-[10px] text-indigo-800">Version 1.0</span>
             </div>
 
             {/* Headline */}
@@ -165,7 +165,7 @@ export default function LandingPage() {
             {/* Trust highlights */}
             <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-xs font-medium text-slate-500">
               <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="h-4 w-4 text-emerald-600" /> 100% Free Mid-Viva Evaluation Tier
+                <CheckCircle2 className="h-4 w-4 text-emerald-600" /> 100% Free Student Edition
               </span>
               <span className="flex items-center gap-1.5">
                 <ShieldCheck className="h-4 w-4 text-indigo-600" /> Human Approval for All Agent Actions
@@ -409,19 +409,19 @@ export default function LandingPage() {
                 Free for Academic Evaluation
               </h2>
               <p className="mt-3 text-sm text-slate-500">
-                Billing is intentionally disabled in this mid-viva MVP.
+                Billing is intentionally disabled in this evaluation release.
               </p>
             </div>
 
             <div className="mt-12 max-w-lg mx-auto rounded-3xl border-2 border-indigo-600 bg-white p-8 shadow-xl relative">
               <div className="absolute -top-3.5 right-8 rounded-full bg-indigo-600 px-3 py-1 text-xs font-bold text-white uppercase tracking-wider">
-                Mid-Viva Scholar Tier
+                Student Scholar Tier
               </div>
               <h3 className="text-xl font-bold text-slate-900">Student Scholar</h3>
-              <p className="text-sm text-slate-500 mt-1">Full access to all 6 specialized agents and workspace tools</p>
+              <p className="text-sm text-slate-500 mt-1">Full access to specialized AI mentors and workspace tools</p>
               <div className="mt-6 flex items-baseline">
                 <span className="text-5xl font-extrabold text-slate-900">₹0</span>
-                <span className="ml-2 text-sm text-slate-500">/ semester (Academic Demo)</span>
+                <span className="ml-2 text-sm text-slate-500">/ semester (Student Edition)</span>
               </div>
 
               <ul className="mt-8 space-y-3.5 text-sm text-slate-700">

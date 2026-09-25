@@ -96,7 +96,7 @@ export function PublicFooter() {
               </li>
               <li>
                 <span className="text-xs text-slate-400 block pt-1">
-                  Mid-Viva Academic Demonstration Version 1.0
+                  Academic Student Edition Version 1.0
                 </span>
               </li>
             </ul>

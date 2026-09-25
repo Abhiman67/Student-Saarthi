@@ -94,7 +94,7 @@ export default function MemorySettingsPage() {
           </div>
           <ul className="list-disc pl-5 space-y-1 text-[11px] text-slate-500">
             <li>Zero cross-user data leakage</li>
-            <li>No persistent vector embeddings stored in mid-viva version</li>
+            <li>No persistent vector embeddings stored in current version</li>
             <li>Complete permanent deletion available on-demand</li>
           </ul>
         </div>

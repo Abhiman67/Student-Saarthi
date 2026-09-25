@@ -289,7 +289,7 @@ export default function AgentChatPage() {
                 </span>
               ) : (
                 <span className="rounded-md bg-[#D97757]/10 px-2 py-0.5 text-[10px] font-bold text-[#D97757]">
-                  Active Mid-Viva
+                  Active
                 </span>
               )}
             </div>
@@ -317,7 +317,7 @@ export default function AgentChatPage() {
               Roadmap Note
             </span>
             <span>
-              <strong>{agent.name}</strong> is planned for the End-Semester scope. The 3 active mentors for Mid-Viva are:
+              <strong>{agent.name}</strong> is planned for future scope. The 3 currently active mentors are:
             </span>
           </div>
           <div className="flex items-center gap-2 font-semibold">

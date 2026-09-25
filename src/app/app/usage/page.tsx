@@ -71,11 +71,11 @@ export default function UsagePage() {
           <Info className="h-5 w-5 text-amber-700 flex-shrink-0 mt-0.5" />
           <div>
             <h2 className="text-sm font-bold text-amber-900">
-              Billing is not active in this MVP.
+              Free Student Access Active
             </h2>
             <p className="mt-1 text-xs text-amber-800 leading-relaxed">
-              Vidya Sarthi is currently running in its free Mid-Viva Demonstration evaluation mode. 
-              All six specialized AI agents, file upload tools, project tracking, and mock viva prep are completely free. 
+              Vidya Sarthi is currently running in free student evaluation mode. 
+              Specialized AI agents, study file tools, project milestones, and mock viva prep are completely free. 
               No payment processing or credit card activation is enabled.
             </p>
           </div>

@@ -389,8 +389,8 @@ export default async function AppDashboard() {
             <div className="flex items-center gap-2">
               <Bot className="h-5 w-5 text-[#D97757]" />
               <h2 className="text-base font-bold text-[#181614]">Your Specialized AI Team</h2>
-              <span className="rounded-full bg-[#D97757]/10 px-2 py-0.5 text-[10px] font-bold text-[#D97757]">
-                Mid-Viva Scope
+              <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-bold text-emerald-700">
+                Active
               </span>
             </div>
             <Link

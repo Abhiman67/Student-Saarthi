@@ -13,21 +13,21 @@ export default function PricingPage() {
           <div className="text-center max-w-3xl mx-auto">
             <span className="text-xs font-bold uppercase tracking-wider text-indigo-600">Fair Academic Access</span>
             <h1 className="mt-2 text-4xl font-extrabold text-slate-900 sm:text-5xl">
-              Student Pricing & Viva Evaluation Tier
+              Student Pricing & Plans
             </h1>
             <p className="mt-4 text-base text-slate-600">
-              Vidya Sarthi is currently in its Mid-Viva Academic Demonstration phase. All features are 100% free for educational evaluation.
+              Vidya Sarthi is currently free for all university students. All features are 100% free for educational use.
             </p>
           </div>
 
-          {/* MVP Non-Billing Notice Banner */}
+          {/* Non-Billing Notice Banner */}
           <div className="mt-10 max-w-2xl mx-auto rounded-xl border border-amber-200 bg-amber-50 p-4 text-center">
             <div className="flex items-center justify-center gap-2 text-amber-800 font-semibold text-sm">
               <Info className="h-4 w-4" />
-              <span>Billing is not active in this MVP.</span>
+              <span>Free Educational Access</span>
             </div>
             <p className="mt-1 text-xs text-amber-700">
-              No credit card or payments required. Paid subscription plans are documented for end-semester future scope only.
+              No credit card or payments required. Enjoy full access to AI mentors and project workspace tools.
             </p>
           </div>
 
@@ -36,13 +36,13 @@ export default function PricingPage() {
             <div className="rounded-3xl border-2 border-indigo-600 bg-white p-8 shadow-lg relative flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between">
-                  <h2 className="text-xl font-bold text-slate-900">Student Scholar (Active MVP)</h2>
+                  <h2 className="text-xl font-bold text-slate-900">Student Scholar</h2>
                   <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-bold text-emerald-800">
                     Active
                   </span>
                 </div>
                 <p className="mt-2 text-sm text-slate-500">
-                  Full student workspace with six specialized AI mentors and human-in-the-loop approvals.
+                  Full student workspace with specialized AI mentors and human-in-the-loop approvals.
                 </p>
 
                 <div className="mt-6 flex items-baseline">
