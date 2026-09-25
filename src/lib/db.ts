@@ -30,7 +30,7 @@ class MockDatabase {
     this.users = [
       {
         ...DEFAULT_USER,
-        passwordHash: "$2a$10$wT19K9Z1tqU4Lw9X3kZ6eOXm7t6U5XGqX0vI2mF0R1n2s3t4u5v6w",
+        passwordHash: "$2a$10$KdEwjrgcKO5G9tQTLG.kkO6Ad4SMRetMgCqhUes5BAfHn7tCr6P.C",
         createdAt: new Date(),
         updatedAt: new Date(),
       },
