@@ -75,17 +75,17 @@ export default async function AppDashboard() {
   return (
     <div className="space-y-8">
       {/* Welcome Banner */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-900 via-indigo-800 to-violet-900 p-6 sm:p-8 text-white shadow-lg">
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#2A2421] via-[#38302B] to-[#1E1A17] p-6 sm:p-8 text-[#FAF8F5] shadow-lg border border-[#3D3631]">
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
-            <div className="flex items-center gap-2 text-indigo-200 text-xs font-semibold uppercase tracking-wider mb-1">
+            <div className="flex items-center gap-2 text-[#D97757] text-xs font-semibold uppercase tracking-wider mb-1">
               <Calendar className="h-3.5 w-3.5" />
               <span>{todayStr}</span>
             </div>
-            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
+            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#FAF8F5]">
               Welcome back, {user.name}! 👋
             </h1>
-            <p className="mt-2 text-indigo-100/90 text-sm max-w-xl">
+            <p className="mt-2 text-[#E8E2D9]/80 text-sm max-w-xl">
               {profile?.institution ? (
                 <span>
                   {profile.institution} • {profile.degree || "Student"} • {profile.semester || "Semester"}
@@ -100,25 +100,25 @@ export default async function AppDashboard() {
           <div className="flex flex-wrap items-center gap-2.5">
             <Link
               href="/app/tasks"
-              className="inline-flex items-center gap-1.5 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md px-3.5 py-2 text-xs font-semibold text-white transition border border-white/10"
+              className="inline-flex items-center gap-1.5 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md px-3.5 py-2 text-xs font-semibold text-[#FAF8F5] transition border border-white/10"
             >
               <Plus className="h-3.5 w-3.5" /> New Task
             </Link>
             <Link
               href="/app/projects/new"
-              className="inline-flex items-center gap-1.5 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md px-3.5 py-2 text-xs font-semibold text-white transition border border-white/10"
+              className="inline-flex items-center gap-1.5 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md px-3.5 py-2 text-xs font-semibold text-[#FAF8F5] transition border border-white/10"
             >
               <Plus className="h-3.5 w-3.5" /> New Project
             </Link>
             <Link
               href="/app/files"
-              className="inline-flex items-center gap-1.5 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md px-3.5 py-2 text-xs font-semibold text-white transition border border-white/10"
+              className="inline-flex items-center gap-1.5 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md px-3.5 py-2 text-xs font-semibold text-[#FAF8F5] transition border border-white/10"
             >
               <FileText className="h-3.5 w-3.5" /> Upload File
             </Link>
             <Link
               href="/app/agents"
-              className="inline-flex items-center gap-1.5 rounded-xl bg-indigo-500 hover:bg-indigo-400 px-4 py-2 text-xs font-semibold text-white shadow-sm transition"
+              className="inline-flex items-center gap-1.5 rounded-xl bg-[#D97757] hover:bg-[#C96442] px-4 py-2 text-xs font-semibold text-white shadow-sm transition"
             >
               <Sparkles className="h-3.5 w-3.5" /> Chat Agents
             </Link>
@@ -385,42 +385,61 @@ export default async function AppDashboard() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Available Agents Quick Access (2 cols) */}
         <div className="lg:col-span-2 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <div className="flex items-center justify-between pb-4 border-b border-slate-100">
+          <div className="flex items-center justify-between pb-4 border-b border-[#E8E2D9]">
             <div className="flex items-center gap-2">
-              <Bot className="h-5 w-5 text-indigo-600" />
-              <h2 className="text-base font-bold text-slate-900">Your Specialized AI Team</h2>
+              <Bot className="h-5 w-5 text-[#D97757]" />
+              <h2 className="text-base font-bold text-[#181614]">Your Specialized AI Team</h2>
+              <span className="rounded-full bg-[#D97757]/10 px-2 py-0.5 text-[10px] font-bold text-[#D97757]">
+                Mid-Viva Scope
+              </span>
             </div>
             <Link
               href="/app/agents"
-              className="text-xs font-semibold text-indigo-600 hover:text-indigo-700 flex items-center gap-1"
+              className="text-xs font-semibold text-[#D97757] hover:text-[#C96442] flex items-center gap-1"
             >
               All Agents <ArrowRight className="h-3 w-3" />
             </Link>
           </div>
 
-          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+          <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
             {[
-              { id: "study-coach", name: "Study Coach", cat: "Syllabus & Exams" },
-              { id: "project-guide", name: "Project Guide", cat: "Architecture & Viva" },
-              { id: "career-scout", name: "Career Scout", cat: "Placement Prep" },
-              { id: "writing-buddy", name: "Writing Buddy", cat: "Reports & Papers" },
-              { id: "code-mentor", name: "Code Mentor", cat: "Debugging & Code" },
-              { id: "interview-coach", name: "Interview Coach", cat: "Mock Interviews" },
+              { id: "writing-buddy", name: "Writing Buddy", cat: "Reports & Papers", tag: "Active" },
+              { id: "project-guide", name: "Project Guide", cat: "Architecture & Viva", tag: "Active" },
+              { id: "code-mentor", name: "Code Mentor", cat: "Debugging & Code", tag: "Active" },
             ].map((agent) => (
               <Link
                 key={agent.id}
                 href={`/app/agents/${agent.id}`}
-                className="rounded-xl border border-slate-100 bg-slate-50/70 p-3.5 hover:bg-indigo-50/40 hover:border-indigo-200 transition group"
+                className="rounded-xl border border-[#E8E2D9] bg-[#FAF8F5] p-3.5 hover:bg-white hover:border-[#D97757]/40 hover:shadow-xs transition group"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-slate-900 group-hover:text-indigo-600 transition">
+                  <span className="text-xs font-bold text-[#181614] group-hover:text-[#D97757] transition">
                     {agent.name}
                   </span>
-                  <Sparkles className="h-3.5 w-3.5 text-indigo-500 opacity-60 group-hover:opacity-100" />
+                  <span className="rounded-md bg-emerald-50 px-1.5 py-0.5 text-[9px] font-bold text-emerald-700">
+                    Live
+                  </span>
                 </div>
-                <p className="text-[11px] text-slate-400 mt-1">{agent.cat}</p>
+                <p className="text-[11px] text-slate-500 mt-1">{agent.cat}</p>
               </Link>
             ))}
+          </div>
+
+          <div className="mt-4 rounded-xl border border-dashed border-[#E8E2D9] bg-white/60 p-3 flex items-center justify-between text-xs">
+            <div className="flex items-center gap-2">
+              <span className="rounded-full bg-[#181614]/5 px-2 py-0.5 text-[10px] font-medium text-slate-600">
+                Future Scope
+              </span>
+              <span className="text-slate-600 text-[11px]">
+                Study Coach, Career Scout & Interview Coach planned for End-Semester
+              </span>
+            </div>
+            <Link
+              href="/app/agents#future-scope"
+              className="text-[11px] font-semibold text-[#D97757] hover:underline"
+            >
+              View Roadmap →
+            </Link>
           </div>
         </div>
 

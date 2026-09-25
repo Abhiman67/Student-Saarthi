@@ -9,41 +9,41 @@ export function PublicFooter() {
           {/* Brand info */}
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600 text-white">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#D97757] text-white">
                 <Sparkles className="h-4 w-4" />
               </div>
-              <span className="text-lg font-bold text-slate-900">Vidya Sarthi</span>
+              <span className="text-lg font-bold text-[#181614]">Vidya Sarthi</span>
             </Link>
-            <p className="mt-3 text-sm text-slate-500 leading-relaxed">
-              A personal AI team for students to study smarter, build better engineering projects, and prepare for career placement.
+            <p className="mt-3 text-sm text-[#181614]/70 leading-relaxed">
+              A personal AI team for students to study smarter, build better engineering projects, and prepare for viva defense.
             </p>
-            <div className="mt-4 flex items-center gap-2 text-xs text-slate-400">
-              <Shield className="h-4 w-4 text-emerald-500" />
+            <div className="mt-4 flex items-center gap-2 text-xs text-[#181614]/50">
+              <Shield className="h-4 w-4 text-emerald-600" />
               <span>Built with Academic Integrity & Privacy First</span>
             </div>
           </div>
 
           {/* Product links */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-900">Workspace</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-[#181614]">Workspace</h3>
             <ul className="mt-4 space-y-2.5 text-sm text-slate-600">
               <li>
-                <Link href="/agents" className="hover:text-indigo-600 transition">
+                <Link href="/agents" className="hover:text-[#D97757] transition">
                   Specialized Agents
                 </Link>
               </li>
               <li>
-                <Link href="/how-it-works" className="hover:text-indigo-600 transition">
+                <Link href="/how-it-works" className="hover:text-[#D97757] transition">
                   How It Works
                 </Link>
               </li>
               <li>
-                <Link href="/pricing" className="hover:text-indigo-600 transition">
+                <Link href="/pricing" className="hover:text-[#D97757] transition">
                   Academic Pricing
                 </Link>
               </li>
               <li>
-                <Link href="/signup" className="hover:text-indigo-600 transition">
+                <Link href="/signup" className="hover:text-[#D97757] transition">
                   Student Sign Up
                 </Link>
               </li>
@@ -52,26 +52,29 @@ export function PublicFooter() {
 
           {/* Specialized Agents */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-900">Specialized Mentors</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-[#181614]">Specialized Mentors</h3>
             <ul className="mt-4 space-y-2.5 text-sm text-slate-600">
               <li>
-                <Link href="/agents#study-coach" className="hover:text-indigo-600 transition">
-                  Study Coach
+                <Link href="/agents#writing-buddy" className="hover:text-[#D97757] transition flex items-center gap-1.5">
+                  <span>Writing Buddy</span>
+                  <span className="text-[10px] bg-emerald-50 text-emerald-700 font-bold px-1.5 py-0.2 rounded">Live</span>
                 </Link>
               </li>
               <li>
-                <Link href="/agents#project-guide" className="hover:text-indigo-600 transition">
-                  Project Guide
+                <Link href="/agents#project-guide" className="hover:text-[#D97757] transition flex items-center gap-1.5">
+                  <span>Project Guide</span>
+                  <span className="text-[10px] bg-emerald-50 text-emerald-700 font-bold px-1.5 py-0.2 rounded">Live</span>
                 </Link>
               </li>
               <li>
-                <Link href="/agents#career-scout" className="hover:text-indigo-600 transition">
-                  Career Scout
+                <Link href="/agents#code-mentor" className="hover:text-[#D97757] transition flex items-center gap-1.5">
+                  <span>Code Mentor</span>
+                  <span className="text-[10px] bg-emerald-50 text-emerald-700 font-bold px-1.5 py-0.2 rounded">Live</span>
                 </Link>
               </li>
               <li>
-                <Link href="/agents#code-mentor" className="hover:text-indigo-600 transition">
-                  Code Mentor
+                <Link href="/agents#future-scope" className="hover:text-[#D97757] transition text-slate-400">
+                  <span>+ 3 Planned (End-Sem Roadmap)</span>
                 </Link>
               </li>
             </ul>

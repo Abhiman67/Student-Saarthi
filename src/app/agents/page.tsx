@@ -2,37 +2,38 @@ import Link from "next/link";
 import { PublicHeader } from "@/components/public/Header";
 import { PublicFooter } from "@/components/public/Footer";
 import {
-  BookOpen,
   Layers,
-  Briefcase,
   PenTool,
   Code2,
+  BookOpen,
+  Briefcase,
   MessageSquareQuote,
   ArrowRight,
   Shield,
   CheckCircle2,
+  Clock,
 } from "lucide-react";
 
 export default function AgentsPublicPage() {
-  const agents = [
+  const activeAgents = [
     {
-      id: "study-coach",
-      name: "Study Coach",
-      role: "Academic & Exam Tutor",
-      category: "Studying",
-      icon: BookOpen,
-      color: "border-blue-200 bg-blue-50/50 text-blue-600",
-      description: "Designed to help students build long-term concept retention through active recall, spaced repetition, study schedules, and step-by-step breakdowns.",
+      id: "writing-buddy",
+      name: "Writing Buddy",
+      role: "Academic & Technical Writer",
+      category: "Writing",
+      icon: PenTool,
+      color: "border-amber-200 bg-amber-50/50 text-amber-600",
+      description: "Helps refine engineering reports, capstone documentation, presentation decks, and formal academic correspondence.",
       capabilities: [
-        "Synthesize difficult textbook chapters into core principles",
-        "Generate multi-choice quizzes and revision flashcards",
-        "Build customized day-by-day exam preparation schedules",
-        "Strictly refuse to cheat or solve live examination questions",
+        "Transform passive or convoluted sentences into concise active voice",
+        "Structure thesis abstracts and IEEE-style research papers",
+        "Format professional correspondence to faculty and supervisors",
+        "Highlight citation standards and grammatical clarity",
       ],
       prompts: [
-        "Explain the CAP theorem in distributed databases using an everyday analogy.",
-        "Create a 5-day revision schedule for Operating System scheduling algorithms.",
-        "Generate 3 flashcards testing my understanding of Normalization (1NF, 2NF, 3NF).",
+        "Review my project abstract for clarity and conciseness.",
+        "Draft a polite email to my professor requesting feedback on our draft report.",
+        "Rewrite this paragraph to eliminate passive voice.",
       ],
     },
     {
@@ -56,46 +57,6 @@ export default function AgentsPublicPage() {
       ],
     },
     {
-      id: "career-scout",
-      name: "Career Scout",
-      role: "Placement & Internship Strategist",
-      category: "Career Preparation",
-      icon: Briefcase,
-      color: "border-emerald-200 bg-emerald-50/50 text-emerald-600",
-      description: "Guides students in mapping academic projects to market requirements, optimizing resumes using the STAR framework, and drafting personalized cover letters.",
-      capabilities: [
-        "Analyze job descriptions to detect technical skill gaps",
-        "Format resume bullets using Google's XYZ accomplishment formula",
-        "Draft tailored cover letters (requiring student review before sending)",
-        "Never auto-apply or submit applications without human oversight",
-      ],
-      prompts: [
-        "How can I rephrase my project bullet to sound more impact-driven?",
-        "What skills am I missing for a Junior Frontend Developer position?",
-        "Draft a cover letter for an internship at a cloud infrastructure startup.",
-      ],
-    },
-    {
-      id: "writing-buddy",
-      name: "Writing Buddy",
-      role: "Academic & Technical Writer",
-      category: "Writing",
-      icon: PenTool,
-      color: "border-amber-200 bg-amber-50/50 text-amber-600",
-      description: "Helps refine engineering reports, capstone documentation, presentation decks, and formal academic correspondence.",
-      capabilities: [
-        "Transform passive or convoluted sentences into concise active voice",
-        "Structure thesis abstracts and IEEE-style research papers",
-        "Format professional correspondence to faculty and internship coordinators",
-        "Highlight citation standards and grammatical clarity",
-      ],
-      prompts: [
-        "Review my project abstract for clarity and conciseness.",
-        "Draft a polite email to my professor requesting feedback on our draft report.",
-        "Rewrite this paragraph to eliminate passive voice.",
-      ],
-    },
-    {
       id: "code-mentor",
       name: "Code Mentor",
       role: "Software Engineering Tutor",
@@ -104,7 +65,7 @@ export default function AgentsPublicPage() {
       color: "border-cyan-200 bg-cyan-50/50 text-cyan-600",
       description: "Assists with algorithmic problem-solving, code readability, performance analysis, and identifying edge case bugs.",
       capabilities: [
-        "Provide line-by-line debugging guidance without just dumping answer code",
+        "Provide line-by-line debugging guidance without dumping answer code",
         "Explain time and space complexity (Big-O analysis)",
         "Suggest modular refactoring and test-driven development practices",
         "Encourage sound software engineering principles (DRY, SOLID)",
@@ -115,25 +76,32 @@ export default function AgentsPublicPage() {
         "How do I write a Vitest unit test for an asynchronous authentication route?",
       ],
     },
+  ];
+
+  const futureScopeAgents = [
+    {
+      id: "study-coach",
+      name: "Study Coach",
+      role: "Academic & Exam Tutor",
+      category: "Studying",
+      icon: BookOpen,
+      description: "Personalized study plans, active recall quizzes, and revision schedules. Reserved for the end-semester semantic memory phase.",
+    },
+    {
+      id: "career-scout",
+      name: "Career Scout",
+      role: "Placement Strategist",
+      category: "Career Preparation",
+      icon: Briefcase,
+      description: "Resume bullet optimization and placement roadmaps. Reserved for the end-semester integration phase.",
+    },
     {
       id: "interview-coach",
       name: "Interview Coach",
-      role: "Mock Interviewer & Feedback Coach",
+      role: "Mock Interviewer",
       category: "Interview Preparation",
       icon: MessageSquareQuote,
-      color: "border-rose-200 bg-rose-50/50 text-rose-600",
-      description: "Simulates mock viva examinations and campus placement interviews, offering constructive critique on confidence, depth, and the STAR framework.",
-      capabilities: [
-        "Conduct interactive behavioral interview simulations",
-        "Challenge students with real-world system design questions",
-        "Provide actionable scoring on articulation, clarity, and depth",
-        "Help students frame project challenges effectively",
-      ],
-      prompts: [
-        "Conduct a mock interview question about handling conflicting team opinions.",
-        "Ask me a technical question regarding database transactions and ACID properties.",
-        "Evaluate my answer using the STAR framework.",
-      ],
+      description: "Interactive mock interviews using STAR method. Reserved for the end-semester multi-modal audio/interactive phase.",
     },
   ];
 
@@ -144,24 +112,31 @@ export default function AgentsPublicPage() {
       <main className="flex-1 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
-            <span className="text-xs font-bold uppercase tracking-wider text-indigo-600">The Specialized AI Team</span>
+            <span className="text-xs font-bold uppercase tracking-wider text-indigo-600">The Student AI Team</span>
             <h1 className="mt-2 text-4xl font-extrabold text-slate-900 sm:text-5xl">
-              Meet Your Six Academic Mentors
+              Specialized Academic Mentors
             </h1>
             <p className="mt-4 text-base text-slate-600 leading-relaxed">
-              Every agent in Vidya Sarthi has a dedicated role, specialized system prompt, and built-in safety policy.
-              Explore how they collaborate to support your college journey.
+              Explore our active specialized mentors for writing, project architecture, and coding, along with our planned future scope agents.
             </p>
           </div>
 
+          {/* ACTIVE AGENTS SECTION */}
           <div className="mt-16 space-y-12">
-            {agents.map((agent) => {
+            <div className="flex items-center gap-2 border-b border-slate-200 pb-3">
+              <span className="rounded-full bg-emerald-100 text-emerald-800 px-3 py-1 text-xs font-bold uppercase tracking-wider">
+                Active in Current Scope
+              </span>
+              <span className="text-xs text-slate-500 font-medium">Available now for interactive workspace discussion</span>
+            </div>
+
+            {activeAgents.map((agent) => {
               const IconComp = agent.icon;
               return (
                 <div
                   key={agent.id}
                   id={agent.id}
-                  className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm hover:shadow-md transition scroll-mt-24"
+                  className="rounded-2xl border-2 border-indigo-200/80 bg-white p-8 shadow-sm hover:shadow-md transition scroll-mt-24"
                 >
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-100">
                     <div className="flex items-center gap-4">
@@ -210,7 +185,7 @@ export default function AgentsPublicPage() {
                     {/* Example Prompts */}
                     <div className="rounded-xl bg-indigo-50/50 p-5 border border-indigo-100/60">
                       <h3 className="text-xs font-bold uppercase tracking-wider text-indigo-900 mb-3 flex items-center gap-1.5">
-                        <Shield className="h-4 w-4 text-indigo-600" /> Suggested Viva & Prep Prompts
+                        <Shield className="h-4 w-4 text-indigo-600" /> Suggested Prompts
                       </h3>
                       <div className="space-y-2">
                         {agent.prompts.map((prm, i) => (
@@ -227,6 +202,40 @@ export default function AgentsPublicPage() {
                 </div>
               );
             })}
+          </div>
+
+          {/* FUTURE SCOPE AGENTS SECTION */}
+          <div className="mt-20">
+            <div className="flex items-center gap-2 border-b border-slate-200 pb-3 mb-6">
+              <span className="rounded-full bg-slate-200 text-slate-700 px-3 py-1 text-xs font-bold uppercase tracking-wider">
+                Planned for End-Semester Scope
+              </span>
+              <span className="text-xs text-slate-500 font-medium">Documented as future roadmap scope</span>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {futureScopeAgents.map((agent) => {
+                const IconComp = agent.icon;
+                return (
+                  <div
+                    key={agent.id}
+                    className="rounded-2xl border border-slate-200 bg-white/60 p-6 opacity-75"
+                  >
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="p-3 rounded-xl bg-slate-100 text-slate-600">
+                        <IconComp className="h-6 w-6" />
+                      </div>
+                      <span className="inline-flex items-center gap-1 text-[10px] font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded">
+                        <Clock className="h-3 w-3" /> Future Scope
+                      </span>
+                    </div>
+                    <h3 className="text-base font-bold text-slate-800">{agent.name}</h3>
+                    <span className="text-xs text-slate-400 block mb-2">{agent.role}</span>
+                    <p className="text-xs text-slate-500 leading-relaxed">{agent.description}</p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </main>

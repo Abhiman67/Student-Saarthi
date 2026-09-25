@@ -277,15 +277,21 @@ export default function AgentChatPage() {
           >
             <ArrowLeft className="h-4 w-4" />
           </Link>
-          <div className="rounded-xl bg-white p-2 border border-slate-200 shadow-xs">
+          <div className="rounded-xl bg-white p-2 border border-[#E8E2D9] shadow-xs">
             {getAgentIcon(agentId)}
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h1 className="text-base font-bold text-slate-900">{agent?.name || "Academic Mentor"}</h1>
-              <span className="rounded-md bg-indigo-50 px-2 py-0.5 text-[10px] font-semibold text-indigo-600">
-                {agent?.category || "Specialized Agent"}
-              </span>
+              <h1 className="text-base font-bold text-[#181614]">{agent?.name || "Academic Mentor"}</h1>
+              {agent?.isFutureScope ? (
+                <span className="rounded-md bg-amber-100 px-2 py-0.5 text-[10px] font-bold text-amber-800">
+                  Future Scope
+                </span>
+              ) : (
+                <span className="rounded-md bg-[#D97757]/10 px-2 py-0.5 text-[10px] font-bold text-[#D97757]">
+                  Active Mid-Viva
+                </span>
+              )}
             </div>
             <p className="text-xs text-slate-500">{agent?.role}</p>
           </div>
@@ -303,16 +309,43 @@ export default function AgentChatPage() {
         )}
       </div>
 
+      {/* Future Scope Notice Banner */}
+      {agent?.isFutureScope && (
+        <div className="border-b border-amber-200 bg-amber-50/90 px-6 py-2.5 text-xs text-amber-900 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div className="flex items-center gap-2">
+            <span className="rounded bg-amber-200 px-1.5 py-0.5 text-[10px] font-bold uppercase text-amber-800">
+              Roadmap Note
+            </span>
+            <span>
+              <strong>{agent.name}</strong> is planned for the End-Semester scope. The 3 active mentors for Mid-Viva are:
+            </span>
+          </div>
+          <div className="flex items-center gap-2 font-semibold">
+            <Link href="/app/agents/writing-buddy" className="text-[#D97757] hover:underline">
+              Writing Buddy
+            </Link>
+            <span>•</span>
+            <Link href="/app/agents/project-guide" className="text-[#D97757] hover:underline">
+              Project Guide
+            </Link>
+            <span>•</span>
+            <Link href="/app/agents/code-mentor" className="text-[#D97757] hover:underline">
+              Code Mentor
+            </Link>
+          </div>
+        </div>
+      )}
+
       {/* Main Conversation & Sidebar Layout */}
       <div className="flex flex-1 overflow-hidden">
         {/* Chat History Drawer */}
-        <div className="hidden md:flex w-64 flex-col border-r border-slate-100 bg-slate-50/30 p-3 overflow-y-auto">
+        <div className="hidden md:flex w-64 flex-col border-r border-[#E8E2D9] bg-[#FAF8F5] p-3 overflow-y-auto">
           <button
             onClick={() => {
               setActiveConvId(null);
               setMessages([]);
             }}
-            className="w-full flex items-center justify-center gap-1.5 rounded-xl border border-indigo-200 bg-indigo-50/60 py-2 px-3 text-xs font-bold text-indigo-700 hover:bg-indigo-100/60 transition mb-3"
+            className="w-full flex items-center justify-center gap-1.5 rounded-xl border border-[#D97757]/30 bg-white py-2 px-3 text-xs font-bold text-[#D97757] hover:bg-[#D97757]/10 transition mb-3 shadow-xs"
           >
             <Sparkles className="h-3.5 w-3.5" /> New Discussion
           </button>
@@ -367,10 +400,10 @@ export default function AgentChatPage() {
                     <button
                       key={i}
                       onClick={() => handleSendMessage(promptText)}
-                      className="w-full rounded-xl border border-slate-200 bg-white p-3 text-xs text-slate-700 hover:border-indigo-400 hover:bg-indigo-50/30 transition text-left shadow-xs flex items-center justify-between group"
+                      className="w-full rounded-xl border border-[#E8E2D9] bg-white p-3 text-xs text-slate-700 hover:border-[#D97757] hover:bg-[#FAF8F5] transition text-left shadow-xs flex items-center justify-between group"
                     >
                       <span>&ldquo;{promptText}&rdquo;</span>
-                      <Send className="h-3 w-3 text-slate-300 group-hover:text-indigo-600 transition flex-shrink-0" />
+                      <Send className="h-3 w-3 text-slate-300 group-hover:text-[#D97757] transition flex-shrink-0" />
                     </button>
                   ))}
                 </div>
@@ -396,8 +429,8 @@ export default function AgentChatPage() {
                     <div
                       className={`max-w-2xl rounded-2xl p-4 text-sm leading-relaxed ${
                         isUser
-                          ? "bg-indigo-600 text-white rounded-br-xs shadow-xs"
-                          : "bg-white text-slate-800 border border-slate-200 rounded-bl-xs shadow-xs"
+                          ? "bg-[#D97757] text-white rounded-br-xs shadow-xs"
+                          : "bg-white text-slate-800 border border-[#E8E2D9] rounded-bl-xs shadow-xs"
                       }`}
                     >
                       <div className="whitespace-pre-wrap">{msg.content}</div>
@@ -405,7 +438,7 @@ export default function AgentChatPage() {
                       {/* Citations Footer */}
                       {citationsList.length > 0 && (
                         <div className="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-500">
-                          <span className="font-semibold flex items-center gap-1 text-[11px] text-indigo-600 mb-1">
+                          <span className="font-semibold flex items-center gap-1 text-[11px] text-[#D97757] mb-1">
                             <Quote className="h-3 w-3" /> Grounded References & Citations:
                           </span>
                           <ul className="list-disc pl-4 space-y-0.5 text-[11px]">
@@ -515,12 +548,12 @@ export default function AgentChatPage() {
                 onChange={(e) => setInputMessage(e.target.value)}
                 placeholder={`Ask ${agent?.name || "your mentor"} (e.g. explain a concept, create a task)...`}
                 disabled={loading}
-                className="flex-1 rounded-xl border border-slate-300 px-4 py-2.5 text-sm text-slate-900 focus:border-indigo-600 focus:outline-none focus:ring-1 focus:ring-indigo-600 shadow-xs"
+                className="flex-1 rounded-xl border border-[#E8E2D9] px-4 py-2.5 text-sm text-[#181614] focus:border-[#D97757] focus:outline-none focus:ring-1 focus:ring-[#D97757] shadow-xs"
               />
               <button
                 type="submit"
                 disabled={loading || !inputMessage.trim()}
-                className="inline-flex items-center gap-1.5 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700 disabled:opacity-50 transition"
+                className="inline-flex items-center gap-1.5 rounded-xl bg-[#D97757] px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#C96442] disabled:opacity-50 transition"
               >
                 {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
                 <span className="hidden sm:inline">Send</span>

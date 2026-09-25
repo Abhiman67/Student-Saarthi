@@ -1,9 +1,15 @@
 # Vidya Sarthi - End-Semester Future Scope & Engineering Report
 
-## 1. Features Excluded from Mid-Viva MVP
+## 1. Features & Agents Excluded from Mid-Viva MVP
 
-In accordance with Section 27 of `build.md`, the following advanced features are intentionally excluded from the Mid-Viva MVP and documented here as future work:
+In accordance with Section 27 of `build.md` and the focused Mid-Viva milestone scope, the system actively ships with **Writing Buddy**, **Project Guide**, and **Code Mentor**. The following specialized agents and advanced capabilities are intentionally documented for the End-Semester Scope:
 
+### Agents Reserved for End-Semester Scope:
+- **Study Coach**: Syllabus ingestion, active recall flashcards, quiz generator, and spaced repetition engine.
+- **Career Scout**: Internship tracking, resume bullet review (Google XYZ framework), ATS keyword gap analysis, and cover letter generator.
+- **Interview Coach**: STAR framework behavioral preparation, technical challenge simulations, and delivery critiques.
+
+### Infrastructure & Autonomous Platform Features:
 - Billing activation and Stripe payment gateways
 - Computer control, desktop automation, and browser RPA
 - Unrestricted shell command execution

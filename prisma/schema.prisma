@@ -46,15 +46,16 @@ model Profile {
 }
 
 model Agent {
-  id           String         @id
-  name         String
-  role         String
-  description  String
-  category     String
-  icon         String
-  systemPrompt String
-  isSystem     Boolean        @default(true)
-  createdAt    DateTime       @default(now())
+  id            String         @id
+  name          String
+  role          String
+  description   String
+  category      String
+  icon          String
+  systemPrompt  String
+  isSystem      Boolean        @default(true)
+  isFutureScope Boolean        @default(false)
+  createdAt     DateTime       @default(now())
 
   conversations Conversation[]
   tasks         Task[]

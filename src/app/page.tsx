@@ -20,15 +20,15 @@ import {
 } from "lucide-react";
 
 export default function LandingPage() {
-  const agents = [
+  const activeAgents = [
     {
-      id: "study-coach",
-      name: "Study Coach",
-      role: "Academic & Exam Tutor",
-      description: "Structured revision plans, active recall quizzes, and foundational explanations without shortcuts.",
-      icon: BookOpen,
-      color: "from-blue-500 to-indigo-600",
-      bgLight: "bg-blue-50 text-blue-600",
+      id: "writing-buddy",
+      name: "Writing Buddy",
+      role: "Academic & Technical Writer",
+      description: "Structure research reports, eliminate passive voice, and polish seminar presentation decks.",
+      icon: PenTool,
+      color: "from-amber-500 to-orange-600",
+      bgLight: "bg-amber-50 text-amber-600",
     },
     {
       id: "project-guide",
@@ -40,24 +40,6 @@ export default function LandingPage() {
       bgLight: "bg-purple-50 text-purple-600",
     },
     {
-      id: "career-scout",
-      name: "Career Scout",
-      role: "Placement Strategist",
-      description: "Match skill gaps for dream tech companies, review resume bullet points, and draft tailored cover letters.",
-      icon: Briefcase,
-      color: "from-emerald-500 to-teal-600",
-      bgLight: "bg-emerald-50 text-emerald-600",
-    },
-    {
-      id: "writing-buddy",
-      name: "Writing Buddy",
-      role: "Academic & Technical Writer",
-      description: "Structure research reports, eliminate passive voice, and polish seminar presentation decks.",
-      icon: PenTool,
-      color: "from-amber-500 to-orange-600",
-      bgLight: "bg-amber-50 text-amber-600",
-    },
-    {
       id: "code-mentor",
       name: "Code Mentor",
       role: "Software Engineering Tutor",
@@ -66,13 +48,31 @@ export default function LandingPage() {
       color: "from-cyan-500 to-blue-600",
       bgLight: "bg-cyan-50 text-cyan-600",
     },
+  ];
+
+  const futureAgents = [
+    {
+      id: "study-coach",
+      name: "Study Coach",
+      role: "Academic & Exam Tutor",
+      description: "Structured revision plans, active recall quizzes, and foundational explanations without shortcuts.",
+      icon: BookOpen,
+      bgLight: "bg-blue-50 text-blue-600",
+    },
+    {
+      id: "career-scout",
+      name: "Career Scout",
+      role: "Placement Strategist",
+      description: "Match skill gaps for dream tech companies, review resume bullet points, and draft tailored cover letters.",
+      icon: Briefcase,
+      bgLight: "bg-emerald-50 text-emerald-600",
+    },
     {
       id: "interview-coach",
       name: "Interview Coach",
       role: "Mock Interviewer",
       description: "Practice technical and behavioral viva questions using the structured STAR framework with real-time feedback.",
       icon: MessageSquareQuote,
-      color: "from-rose-500 to-pink-600",
       bgLight: "bg-rose-50 text-rose-600",
     },
   ];
@@ -224,30 +224,36 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* 6 SPECIALIZED AGENTS SECTION */}
+        {/* SPECIALIZED AGENTS SECTION */}
         <section id="agents" className="py-20 bg-white border-y border-slate-200">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto">
               <span className="text-xs font-bold uppercase tracking-wider text-indigo-600">The Student AI Team</span>
               <h2 className="mt-2 text-3xl font-extrabold text-slate-900 sm:text-4xl">
-                Six Specialized Agents Working for You
+                Active Specialized Mentors
               </h2>
               <p className="mt-4 text-base text-slate-600">
-                Instead of one generic bot that forgets your context, Vidya Sarthi provides dedicated agents with distinct personas and safety constraints.
+                Vidya Sarthi provides dedicated agents with distinct personas, grounded context, and safety constraints.
               </p>
             </div>
 
-            <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {agents.map((agent) => {
+            {/* 3 Active Agents */}
+            <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
+              {activeAgents.map((agent) => {
                 const IconComponent = agent.icon;
                 return (
                   <div
                     key={agent.id}
-                    className="relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-6 shadow-sm hover:shadow-md hover:border-indigo-300 transition group"
+                    className="relative flex flex-col justify-between rounded-2xl border-2 border-indigo-200/80 bg-white p-6 shadow-sm hover:shadow-md hover:border-indigo-400 transition group"
                   >
                     <div>
-                      <div className={`inline-flex p-3 rounded-xl ${agent.bgLight} mb-4`}>
-                        <IconComponent className="h-6 w-6" />
+                      <div className="flex items-center justify-between mb-4">
+                        <div className={`inline-flex p-3 rounded-xl ${agent.bgLight}`}>
+                          <IconComponent className="h-6 w-6" />
+                        </div>
+                        <span className="rounded-full bg-emerald-100 text-emerald-800 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider">
+                          Active Now
+                        </span>
                       </div>
                       <h3 className="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition">
                         {agent.name}
@@ -267,6 +273,41 @@ export default function LandingPage() {
                   </div>
                 );
               })}
+            </div>
+
+            {/* Future Scope Agents Preview */}
+            <div className="mt-16 rounded-2xl border border-slate-200 bg-slate-50/60 p-8">
+              <div className="text-center max-w-xl mx-auto mb-8">
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Roadmap</span>
+                <h3 className="text-lg font-bold text-slate-800 mt-1">Planned for End-Semester Scope</h3>
+                <p className="text-xs text-slate-500 mt-1">
+                  Additional mentors reserved for the end-semester autonomous orchestration phase.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {futureAgents.map((agent) => {
+                  const IconComponent = agent.icon;
+                  return (
+                    <div
+                      key={agent.id}
+                      className="rounded-xl border border-slate-200 bg-white/70 p-5 opacity-80"
+                    >
+                      <div className="flex items-center justify-between mb-3">
+                        <div className={`inline-flex p-2.5 rounded-lg ${agent.bgLight}`}>
+                          <IconComponent className="h-5 w-5" />
+                        </div>
+                        <span className="rounded-full bg-slate-100 text-slate-500 px-2 py-0.5 text-[10px] font-bold">
+                          Future Scope
+                        </span>
+                      </div>
+                      <h4 className="text-sm font-bold text-slate-800">{agent.name}</h4>
+                      <span className="text-[11px] text-slate-400 block mb-1">{agent.role}</span>
+                      <p className="text-xs text-slate-500 line-clamp-2">{agent.description}</p>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </section>

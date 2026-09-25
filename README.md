@@ -11,12 +11,14 @@
 
 Crucially, Vidya Sarthi enforces **Human-in-the-Loop Governance**: AI agents cannot autonomously modify a student's workspace (such as scheduling tasks or modifying projects) without explicit human approval via interactive approval cards and audit logging.
 
-### Specialized Mentors
-1. **Study Coach**: Exam preparation roadmaps, active recall flashcards, practice quizzes, and concept explanations.
-2. **Project Guide**: Architecture advice, milestone planning, documentation structure, and viva defense simulation.
-3. **Career Scout**: Internship tracking, resume bullet review (Google XYZ framework), ATS keyword gap analysis, and cover letter drafts.
-4. **Writing Buddy**: Academic report structuring, IEEE paper formatting, active voice editing, and formal correspondence.
-5. **Code Mentor**: Algorithmic problem-solving, runtime debugging, and design pattern mentoring without answer-dumping.
+### Active Mentors (Mid-Viva Scope)
+1. **Writing Buddy**: Academic report structuring, IEEE paper formatting, active voice editing, literature review outlining, and formal correspondence.
+2. **Project Guide**: Capstone architecture advice, milestone planning, viva defense preparation, and technical trade-off evaluations.
+3. **Code Mentor**: Algorithmic problem-solving, runtime debugging, clean architecture guidance, and design pattern mentoring without answer-dumping.
+
+### Planned Mentors (End-Semester Future Scope)
+4. **Study Coach**: Syllabus breakdown, exam preparation roadmaps, active recall flashcards, and concept revision.
+5. **Career Scout**: Internship tracking, resume bullet review (Google XYZ framework), ATS keyword gap analysis, and cover letter drafts.
 6. **Interview Coach**: STAR framework behavioral preparation, technical challenge simulations, and structured delivery critiques.
 
 ---
